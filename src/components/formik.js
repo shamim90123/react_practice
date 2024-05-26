@@ -46,9 +46,12 @@ const FormikComponent = () => {
          name="firstName"
          type="text"
          onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
          value={formik.values.firstName}
        />
-         {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+          {formik.touched.firstName && formik.errors.firstName ? (
+         <div>{formik.errors.firstName}</div>
+       ) : null}
  
        <label htmlFor="lastName">Last Name</label>
        <input
