@@ -59,9 +59,12 @@ const FormikComponent = () => {
          name="lastName"
          type="text"
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.lastName}
        />
-       {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+            {formik.touched.lastName && formik.errors.lastName ? (
+            <div>{formik.errors.lastName}</div>
+        ) : null}
 
       <label htmlFor="email">Email Address</label>
       <input
@@ -69,9 +72,12 @@ const FormikComponent = () => {
         name="email"
         type="email"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.email}
       />
-        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            {formik.touched.email && formik.errors.email ? (
+             <div>{formik.errors.email}</div>
+         ) : null}
 
       <button type="submit">Submit</button>
     </form>
