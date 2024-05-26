@@ -6,6 +6,7 @@ import Login from './components/login';
 import Signup from './components/sign_up';
 import Dashboard from './components/dashboard';
 import MyComponent from './components/map';
+import FormikComponent from './components/formik';
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/map" element={<MyComponent />} />
+                <Route path="/formik" element={<FormikComponent />} />
 
             </Routes>
         </Router>
