@@ -1,16 +1,23 @@
 // src/Login.jsx
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('admin@example.com');
+  const [password, setPassword] = useState('password');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    if (email === 'admin@example.com' && password === 'password') {
+      console.log('Login Successful');
+      navigate('/dashboard'); // Redirect to Dashboard
+    } else {
+      console.log('Invalid Credentials');
+    }
+
   };
 
   return (
