@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+    <Container className="d-flex justify-content-center align-items-center" style={{ height: '85vh' }}>
       <Row>
         <Col>
           <Card style={{ width: '18rem', backgroundColor: 'cadetblue' }}>
