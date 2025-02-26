@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import logo from './logo.svg';
-import './App.css';
-import Login from './components/login';
-import Signup from './components/sign_up';
-import Dashboard from './components/dashboard';
-import MyComponent from './components/map';
-import FormikComponent from './components/formik';
+import './assets/styles/App.css';
+import Login from './pages/Login/login';
+import Signup from './pages/Signup/sign_up';
+import Dashboard from './pages/Dashboard/dashboard';
+import MyComponent from './pages/Map/map';
+import FormikComponent from './pages/Form/formik';
 import Counter from './features/counter/Counter';
 
 
