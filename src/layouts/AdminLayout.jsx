@@ -1,12 +1,15 @@
 // Common layouts used across multiple pages (e.g., Admin, Dashboard, User).
-
+import PublicHeader from '../components/Header/PublicHeader';
+import PublicFooter from '../components/Header/PublicHeader';
 
 function MainLayout({ children }) {
     return (
       <div>
-        <Header />
+        {/* <header>Main Header</header> */}
+        <PublicHeader />
         <main>{children}</main>
-        <Footer />
+        <PublicFooter />
+        {/* <header>Main Footer</header> */}
       </div>
     );
   }
