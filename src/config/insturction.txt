@@ -1,2 +1,10 @@
-This directory contains CSS or other styling files used to define the visual appearance of your application. 
-In this folder styles of different components are stored here.
+This folder contains of a configuration file where we store environment variables in config.js. 
+We will use this file to set up multi-environment configurations in your application. 
+Ex- Environment Configuration, WebPack Configuration, Babel Configuration, etc.
+
+usages
+
+import config from "../../config/config";
+
+<h6>API Base URL: {config.API_BASE_URL}</h6>
+<p>Debug Mode: {config.DEBUG_MODE ? "Enabled" : "Disabled"}</p>
