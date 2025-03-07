@@ -1,0 +1,17 @@
+.header {
+    background: #333;
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  .link {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
