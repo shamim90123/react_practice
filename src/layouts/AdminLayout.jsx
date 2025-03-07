@@ -1,6 +1,6 @@
 // Common layouts used across multiple pages (e.g., Admin, Dashboard, User).
-import AdminHeader from '../components/AdminHeader';
-import AdminFooter from '../components/AdminFooter';
+import AdminHeader from '../components/layouts/AdminHeader';
+import AdminFooter from '../components/layouts/AdminFooter';
 
 function MainLayout({ children }) {
     return (
