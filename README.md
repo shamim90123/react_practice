@@ -26,18 +26,18 @@ A modern, scalable React project with separate **Admin** and **Public** layouts,
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 npm install
-
+```
 
 ## 🚀 Running the App
 
 ```bash
 npm start
-
+```
 
 ## 👨‍💻 Author
 Developed by **Shamim Reza**. Connect with me on [GitHub](https://github.com/shamim90123).
 
-📅 Changelog
+### 📅 Changelog
 Mar 7, 2025: Admin and public layouts separated, instruction file added
 
 Feb 26, 2025: Login page updated, initial layouts added, bugs fixed
