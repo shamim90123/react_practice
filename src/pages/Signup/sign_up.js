@@ -1,21 +1,46 @@
 // src/SignupForm.jsx
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
+import axiosInstance from '../../api/axiosInstance';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const SignupForm = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle signup logic here
-    if (password === confirmPassword) {
-      console.log('Email:', email);
-      console.log('Password:', password);
-    } else {
-      console.error('Passwords do not match!');
-    }
+   
+    try {
+      if (password !== confirmPassword) {
+        console.error('Passwords do not match');
+        return;
+      }
+
+      const { data } = await axiosInstance.post('/auth/register', 
+        {
+          name,
+          email,
+          password,
+        }
+      );
+
+      if (data.status === 'success') {
+        toast.success('Signup successful! Please log in.');
+        navigate('/'); // Redirect to login page after successful signup
+      } else {
+        toast.error(data.message || 'Signup failed!');
+      }
+        
+      } catch (error) {
+        console.error('Error during signup:', error);
+        toast.error(error.response?.data?.error || 'An error occurred during signup');
+      }
+
   };
 
   return (
@@ -26,6 +51,17 @@ const SignupForm = () => {
             <Card.Body>
               <Card.Title className="text-center">Sign Up</Card.Title>
               <Form onSubmit={handleSubmit}>
+
+                <Form.Group controlId="formBasicName" className="mb-3">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </Form.Group>
+
                 <Form.Group controlId="formBasicEmail" className="mb-3">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
